@@ -1,5 +1,5 @@
 from typing import Callable
-from src.algo.sorts import *
+from src.algo.sorts import (bubble_sort,quick_sort,heap_sort,radix_sort,bucket_sort,counting_sort,)
 
 ALGO_MAP: dict[str, Callable] = {
     "bubble": bubble_sort,
