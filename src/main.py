@@ -49,6 +49,13 @@ def stack(operations: str):
             except IndexError as e:
                 output_lines.append(f"peek: ERROR: {e}")
                 i += 1
+        elif op == "min_stack":
+            try:
+                val = s.min_stack
+                output_lines.append(f"Min: {val}")
+                i += 1
+            except IndexError as e:
+                output_lines.append(f"min: ERROR: {e}")
         else:
             typer.echo(f"Unknown operation: '{op}'", err=True)
             raise typer.Exit(1)
@@ -191,6 +198,9 @@ def interactive():
                 elif subcmd == "peek":
                     val = in_stack.peek()
                     typer.echo(f"Top: {val}")
+                elif subcmd == "min_stack":
+                    val = in_stack.min_stack()
+                    typer.echo(f"Min: {val}")
                 else:
                     typer.echo("Unknown stack command. Use: push, pop, peek")
             except (IndexError, ValueError) as e:

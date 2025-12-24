@@ -20,3 +20,5 @@ class Stack:
 
     def __len__(self) -> int:
         return len(self._items)
+    def min_stack(self) -> int:
+        return min(self._items)
